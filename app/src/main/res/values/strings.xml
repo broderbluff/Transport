@@ -1,0 +1,54 @@
+<resources>
+
+    <string name="app_name">Transport</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="info">Kollektivavtalen upprättas mellan fackförbund och arbetsgivarorganisationer och styr din lön och en rad andra regler på arbetsplatsen. </string>
+
+
+
+    <string name="info2">De ger dig rätt till ersättning för övertid och OB, semesterersättning, rimliga arbetstider med mera.</string>
+    <string name="info3">Men det är bara miniminivåerna – golvet – som slås fast i avtalet, det kan alltså inte försämra villkoren, bara förbättra.</string>
+
+    <string name="info4"> Kollektivavtalet garanterar också att du är försäkrad om du blir sjuk, om du skadas i arbetet eller blir av med jobbet.</string>
+    <string name="info5"> Dessutom kan det finnas regler om sådant som utbildning, jämställdhet och frågor som är speciella för just din bransch.</string>
+    <string name="info6"> Alla företag är inte anslutna till en arbetsgivarorganisation. De kan istället teckna ett avtal direkt med facket, ett så kallat hängavtal.</string>
+
+
+    <string name="info7"> I många andra länder är det lagar och förordningar som styr arbetsvillkor och löner. </string>
+    <string name="info7b">Det kan verka enklare, men har visat sig leda till lägre ingångslöner och sämre villkor än i Sverige och ett fåtal andra länder som reglerar dessa frågor i kollektivavtal.</string>
+    <string name="info8">Men det gäller att alla arbetsplatser har kollektivavtal för att vår modell ska fungera. </string>
+    <string name="info8b"> Det är därför fackets viktiga uppgift att bevaka arbetsmarknaden och teckna avtal med alla arbetsgivare.</string>
+    <string name="info8c"> Vi har också laglig rätt att vidta stridsåtgärder mot företag som vägrar.</string>
+    <string name="info9"> Så vem bestämmer då hur stor löneförhöjning du får nästa år? </string>
+    <string name="info9b">Det beror på om din arbetsgivare har tecknat kollektivavtal eller inte.</string>
+    <string name="info9c">Förhoppningsvis finns kollektivavtal på din arbetsplats och då är du garanterad en viss höjning.</string>
+    <string name="info10"> Men om ditt företag saknar kollektivavtal är det upp till din arbetsgivare att bestämma om du ska få mer pengar eller ej. </string>
+    <string name="info11">Inget avtal – inget skydd.</string>
+    <string name="empty_list">Inget företag hittades.</string>
+    <string name="search_dialog">Söker företag, det kan ta en liten stund...</string>
+
+
+
+
+
+    <string name="bemanning">BEMANNINGSFÖRETAG</string>
+    <string name="bensinstation">BENSINSTATION</string>
+    <string name="bevakning">BEVAKNING OCH SÄKERHET</string>
+    <string name="bransle">BRÄNSLEHANTERING</string>
+    <string name="dackbarning">DÄCK, BÄRGNING, BILVÅRD</string>
+    <string name="flygbranschen">FLYGBRANSCHEN</string>
+    <string name="gods">GODSTRANSPORTER</string>
+    <string name="hamn">HAMNARBETE</string>
+    <string name="persontransport">PERSONTRANSPORTER</string>
+    <string name="renhallning">RENHÅLLNING</string>
+    <string name="terminal">TERMINAL OCH LAGER</string>
+    <string name="tidnings">TIDNINGSBUD OCH REKLAM</string>
+    <string name="actionbarBransch">Välj bransch</string>
+    <string name="actionbarSearch">Sök företag</string>
+    <string name="searchHint">Sök efter kollektivavtal</string>
+    <string name="actionbarInfo">Varför kollektivavtal</string>
+    <string name="toast_no_internet">Ingen anslutning till internet</string>
+
+</resources>
