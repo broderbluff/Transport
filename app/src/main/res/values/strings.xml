@@ -50,5 +50,6 @@
     <string name="searchHint">Sök efter kollektivavtal</string>
     <string name="actionbarInfo">Varför kollektivavtal</string>
     <string name="toast_no_internet">Ingen anslutning till internet</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

@@ -60,6 +60,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_height="55dp"
                 android:gravity="center"
+
                 android:onClick="bemanningButton"
                 android:orientation="horizontal"
                 android:background="@drawable/shape_category_textview">

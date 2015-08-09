@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+   >
 
 
     <TextView
@@ -13,7 +14,7 @@
 
     <!-- Entry data display -->
     <TextView
-        android:id="@+id/entry"
+        android:id="@+id/company"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -22,7 +23,7 @@
         style="@style/ShadowText"/>
     <!-- the Meaning data display -->
     <TextView
-        android:id="@+id/meaning"
+        android:id="@+id/address"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"

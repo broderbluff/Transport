@@ -46,7 +46,7 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
 
     private ImageButton btnsearch;
 
-
+    private TextView tvIntro;
     private ProgressDialog pDialog;
 
 
@@ -59,7 +59,7 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
 
 
     private static final String TAG_SUCCESS = "success";
-    private static final String TAG_IDIOMS = "idioms";
+    private static final String TAG_AVTAL = "avtal";
     private static final String TAG_ID = "id";
     private static final String TAG_COMPANY = "company";
     private static final String TAG_ADDRESS = "address";
@@ -76,7 +76,7 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_layout);
         Intent myIntent = getIntent();
-
+        tvIntro = (TextView)findViewById(R.id.tvIntro);
         bransch = myIntent.getStringExtra("bransch");
 
 
@@ -91,6 +91,7 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    tvIntro.setVisibility(View.GONE);
                     InputMethodManager inputManager = (InputMethodManager)
                             getSystemService(Context.INPUT_METHOD_SERVICE);
 
@@ -118,14 +119,19 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
-                String iid = ((TextView) view.findViewById(R.id.meaning)).getText()
+                String address = ((TextView) view.findViewById(R.id.address)).getText()
+                        .toString();
+                String companyName = ((TextView) view.findViewById(R.id.company)).getText()
                         .toString();
 
-                String uri = "geo:0,0?q=" + iid + "&z=16";
+                Intent intent = new Intent(Search.this, MapsActivity.class);
+                intent.putExtra("address", address);
+                intent.putExtra("company", companyName);
 
-                startActivity(new Intent(
-                        android.content.Intent.ACTION_VIEW, Uri
-                        .parse(uri)));
+
+
+
+                startActivity(intent);
 
 
             }
@@ -142,6 +148,7 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.imageSearchButton) {
+            tvIntro.setVisibility(View.GONE);
             InputMethodManager inputManager = (InputMethodManager)
                     getSystemService(Context.INPUT_METHOD_SERVICE);
 
@@ -208,7 +215,7 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
 
                 if (success == 1) {
 
-                    idioms = json.getJSONArray(TAG_IDIOMS);
+                    idioms = json.getJSONArray(TAG_AVTAL);
 
 
                     for (int i = 0; i < idioms.length(); i++) {
@@ -254,7 +261,7 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
                     ListAdapter adapter = new SimpleAdapter(
                             Search.this, avtalList,
                             R.layout.list_view, new String[]{TAG_ID, TAG_COMPANY, TAG_ADDRESS},
-                            new int[]{R.id.id, R.id.entry, R.id.meaning});
+                            new int[]{R.id.id, R.id.company, R.id.address});
                     {
 
                     }
