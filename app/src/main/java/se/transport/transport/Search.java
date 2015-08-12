@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatCallback;
 import android.support.v7.view.ActionMode;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
@@ -21,6 +22,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -41,10 +43,10 @@ import java.util.List;
  * Created by Patrik on 2015-06-08.
  */
 
-public class Search extends ListActivity implements OnClickListener, AppCompatCallback {
+public class Search extends ListActivity implements  AppCompatCallback {
     private EditText txtkeyword;
 
-    private ImageButton btnsearch;
+    private ImageView btnsearch;
 
     private TextView tvIntro;
     private ProgressDialog pDialog;
@@ -81,8 +83,7 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
 
 
         txtkeyword = (EditText) findViewById(R.id.txtkeyword);
-        btnsearch = (ImageButton) findViewById(R.id.imageSearchButton);
-        btnsearch.setOnClickListener(this);
+
 
         avtalList = new ArrayList<HashMap<String, String>>();
 
@@ -109,6 +110,48 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
                 return false;
             }
         });
+
+
+
+        txtkeyword.setOnTouchListener(new View.OnTouchListener() {
+            final int DRAWABLE_LEFT = 0;
+            final int DRAWABLE_TOP = 1;
+            final int DRAWABLE_RIGHT = 2;
+            final int DRAWABLE_BOTTOM = 3;
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    int leftEdgeOfRightDrawable = txtkeyword.getRight()
+                            - txtkeyword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width();
+                    // when EditBox has padding, adjust leftEdge like
+                    // leftEdgeOfRightDrawable -= getResources().getDimension(R.dimen.edittext_padding_left_right);
+                    if (event.getRawX() >= leftEdgeOfRightDrawable) {
+                        tvIntro.setVisibility(View.GONE);
+                        InputMethodManager inputManager = (InputMethodManager)
+                                getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                                InputMethodManager.HIDE_NOT_ALWAYS);
+                        companysearch = txtkeyword.getText().toString();
+                        avtalList.clear();
+
+                        if (isNetworkAvailable()) {
+
+                            new LoadKollektivAvtal().execute();
+                        }
+                        txtkeyword.setText("");
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
+
+
+
+
 
         ListView lv = getListView();
 
@@ -138,6 +181,10 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
         });
 
 
+
+
+
+
     }
 
 
@@ -145,26 +192,13 @@ public class Search extends ListActivity implements OnClickListener, AppCompatCa
         this.finish();
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.imageSearchButton) {
-            tvIntro.setVisibility(View.GONE);
-            InputMethodManager inputManager = (InputMethodManager)
-                    getSystemService(Context.INPUT_METHOD_SERVICE);
 
-            inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                    InputMethodManager.HIDE_NOT_ALWAYS);
-            companysearch = txtkeyword.getText().toString();
-            avtalList.clear();
 
-            if (isNetworkAvailable()) {
 
-                new LoadKollektivAvtal().execute();
-            }
 
-        }
 
-    }
+
+
 
     @Override
     public void onSupportActionModeStarted(ActionMode mode) {
