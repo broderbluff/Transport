@@ -1,4 +1,4 @@
-package se.transport.transport;
+package se.transport.transport.UI;
 
 import android.content.Intent;
 import android.location.Address;
@@ -21,6 +21,9 @@ import java.lang.Override;
 import java.util.List;
 import java.util.Locale;
 
+import se.transport.transport.R;
+import se.transport.transport.Utils.Constants;
+
 public class MapsActivity extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
@@ -36,8 +39,8 @@ public class MapsActivity extends FragmentActivity {
         setUpMapIfNeeded();
 
         Intent myIntent = getIntent();
-        address = myIntent.getStringExtra("address");
-        company = myIntent.getStringExtra("company");
+        address = myIntent.getStringExtra(Constants.SEARCH_TAG_ADDRESS);
+        company = myIntent.getStringExtra(Constants.SEARCH_TAG_COMPANY);
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         List<Address> addresses = null;
         try {
@@ -45,7 +48,10 @@ public class MapsActivity extends FragmentActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Address address = addresses.get(0);
+        Address address = null;
+        if (addresses != null) {
+            address = addresses.get(0);
+        }
         longitude = address.getLongitude();
         latitude = address.getLatitude();
 
@@ -66,9 +72,7 @@ public class MapsActivity extends FragmentActivity {
 
         singleMarker = mMap.addMarker(new MarkerOptions()
 
-                .position(latLng)
-
-                .title("Incident"));
+                .position(latLng));
 
         CameraPosition newCamPos = new CameraPosition(new LatLng(lati, longi),
                 14.0f,

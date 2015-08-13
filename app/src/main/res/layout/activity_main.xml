@@ -15,9 +15,10 @@
 
         android:textSize="20sp"
         style="@style/ShadowText"
-        android:layout_alignTop="@+id/imageInfo"
+        android:layout_above="@+id/imageInfo"
         android:layout_alignLeft="@+id/searchButton"
-        android:layout_alignStart="@+id/searchButton" />
+        android:layout_alignStart="@+id/searchButton"
+        android:layout_marginBottom="17dp"/>
 
     <ImageButton
         android:layout_width="100dp"
@@ -26,8 +27,10 @@
         android:onClick="searchClick"
         android:background="@drawable/xxhdpisearchicon"
         android:layout_above="@+id/textView"
-        android:layout_alignRight="@+id/imageLogo"
-        android:layout_alignEnd="@+id/imageLogo" />
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"/>
 
     <ImageButton
         android:layout_width="115dp"
@@ -45,11 +48,11 @@
         android:id="@+id/imageInfo"
         android:onClick="infoClick"
         android:background="@drawable/xxhdpiinfo"
-        android:layout_marginLeft="48dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginEnd="48dp"
         android:layout_above="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,8 +62,9 @@
         android:id="@+id/textView2"
         android:textColor="#fff"
         style="@style/ShadowText"
-        android:layout_centerVertical="true"
+        android:layout_marginBottom="92dp"
+        android:layout_above="@+id/imageLogo"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>

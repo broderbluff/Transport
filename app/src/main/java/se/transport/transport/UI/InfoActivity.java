@@ -1,18 +1,19 @@
-package se.transport.transport;
+package se.transport.transport.UI;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
+import se.transport.transport.R;
+
 /**
  * Created by Patrik on 2015-06-04.
  */
-public class Info extends Activity {
+public class InfoActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Intent intent = getIntent();
-        //String value = intent.getStringExtra("key"); //if it's a string you stored.
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.infolayout);

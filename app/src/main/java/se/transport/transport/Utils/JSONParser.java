@@ -1,4 +1,4 @@
-package se.transport.transport;
+package se.transport.transport.Utils;
 
 import android.util.Log;
 
@@ -45,7 +45,7 @@ public class JSONParser {
         try {
 
 // check for request method
-            if(method == "POST"){
+            if(method.equals("POST")){
 // request method is POST
 // defaultHttpClient
                 DefaultHttpClient httpClient = new DefaultHttpClient();
@@ -56,7 +56,7 @@ public class JSONParser {
                 HttpEntity httpEntity = httpResponse.getEntity();
                 is = httpEntity.getContent();
 
-            }else if(method == "GET"){
+            }else if(method.equals("GET")){
 // request method is GET
                 DefaultHttpClient httpClient = new DefaultHttpClient();
                 String paramString = URLEncodedUtils.format(params, "UTF-8");
@@ -80,7 +80,7 @@ public class JSONParser {
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     is, "utf8"), 8);
             StringBuilder sb = new StringBuilder();
-            String line = null;
+            String line;
             while ((line = reader.readLine()) != null) {
                 sb.append(line + "\n");
             }

@@ -1,4 +1,4 @@
-package se.transport.transport;
+package se.transport.transport.UI;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,12 +15,10 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -39,14 +36,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import se.transport.transport.R;
+import se.transport.transport.Utils.Constants;
+import se.transport.transport.Utils.JSONParser;
+
 /**
  * Created by Patrik on 2015-06-08.
  */
 
-public class Search extends ListActivity implements  AppCompatCallback {
-    private EditText txtkeyword;
+public class SearchActivity extends ListActivity implements  AppCompatCallback {
+    private EditText searchEditText;
 
-    private ImageView btnsearch;
+    
 
     private TextView tvIntro;
     private ProgressDialog pDialog;
@@ -60,13 +61,9 @@ public class Search extends ListActivity implements  AppCompatCallback {
     private static String url_search = "http://brimir.eu/search.php";
 
 
-    private static final String TAG_SUCCESS = "success";
-    private static final String TAG_AVTAL = "avtal";
-    private static final String TAG_ID = "id";
-    private static final String TAG_COMPANY = "company";
-    private static final String TAG_ADDRESS = "address";
 
-    JSONArray idioms = null;
+
+   protected JSONArray avtal = null;
 
     public String companysearch;
     public String bransch;
@@ -79,16 +76,16 @@ public class Search extends ListActivity implements  AppCompatCallback {
         setContentView(R.layout.search_layout);
         Intent myIntent = getIntent();
         tvIntro = (TextView)findViewById(R.id.tvIntro);
-        bransch = myIntent.getStringExtra("bransch");
+        bransch = myIntent.getStringExtra(Constants.KEY_BRANSCH);
 
 
-        txtkeyword = (EditText) findViewById(R.id.txtkeyword);
+        searchEditText = (EditText) findViewById(R.id.searchEditText);
 
 
         avtalList = new ArrayList<HashMap<String, String>>();
 
-        //keyboard with searchbutton
-        txtkeyword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+        searchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -98,7 +95,7 @@ public class Search extends ListActivity implements  AppCompatCallback {
 
                     inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
                             InputMethodManager.HIDE_NOT_ALWAYS);
-                    companysearch = txtkeyword.getText().toString();
+                    companysearch = searchEditText.getText().toString();
                     avtalList.clear();
                     if (isNetworkAvailable()) {
 
@@ -113,17 +110,16 @@ public class Search extends ListActivity implements  AppCompatCallback {
 
 
 
-        txtkeyword.setOnTouchListener(new View.OnTouchListener() {
-            final int DRAWABLE_LEFT = 0;
-            final int DRAWABLE_TOP = 1;
+        searchEditText.setOnTouchListener(new View.OnTouchListener() {
+
             final int DRAWABLE_RIGHT = 2;
-            final int DRAWABLE_BOTTOM = 3;
+
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_UP) {
-                    int leftEdgeOfRightDrawable = txtkeyword.getRight()
-                            - txtkeyword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width();
+                    int leftEdgeOfRightDrawable = searchEditText.getRight()
+                            - searchEditText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width();
                     // when EditBox has padding, adjust leftEdge like
                     // leftEdgeOfRightDrawable -= getResources().getDimension(R.dimen.edittext_padding_left_right);
                     if (event.getRawX() >= leftEdgeOfRightDrawable) {
@@ -133,14 +129,14 @@ public class Search extends ListActivity implements  AppCompatCallback {
 
                         inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
                                 InputMethodManager.HIDE_NOT_ALWAYS);
-                        companysearch = txtkeyword.getText().toString();
+                        companysearch = searchEditText.getText().toString();
                         avtalList.clear();
 
                         if (isNetworkAvailable()) {
 
                             new LoadKollektivAvtal().execute();
                         }
-                        txtkeyword.setText("");
+                        searchEditText.setText("");
                         return true;
                     }
                 }
@@ -167,9 +163,9 @@ public class Search extends ListActivity implements  AppCompatCallback {
                 String companyName = ((TextView) view.findViewById(R.id.company)).getText()
                         .toString();
 
-                Intent intent = new Intent(Search.this, MapsActivity.class);
-                intent.putExtra("address", address);
-                intent.putExtra("company", companyName);
+                Intent intent = new Intent(SearchActivity.this, MapsActivity.class);
+                intent.putExtra(Constants.SEARCH_TAG_ADDRESS, address);
+                intent.putExtra(Constants.SEARCH_TAG_COMPANY, companyName);
 
 
 
@@ -223,8 +219,8 @@ public class Search extends ListActivity implements  AppCompatCallback {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(Search.this);
-            pDialog.setMessage(Search.this.getString(R.string.search_dialog));
+            pDialog = new ProgressDialog(SearchActivity.this);
+            pDialog.setMessage(SearchActivity.this.getString(R.string.search_dialog));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -235,8 +231,8 @@ public class Search extends ListActivity implements  AppCompatCallback {
 
             List<NameValuePair> params = new ArrayList<NameValuePair>();
 
-            params.add(new BasicNameValuePair("company", companysearch));
-            params.add(new BasicNameValuePair("bransch", bransch));
+            params.add(new BasicNameValuePair(Constants.SEARCH_TAG_COMPANY, companysearch));
+            params.add(new BasicNameValuePair(Constants.KEY_BRANSCH, bransch));
 
             JSONObject json = jParser.makeHttpRequest(url_search, "GET", params);
 
@@ -245,33 +241,50 @@ public class Search extends ListActivity implements  AppCompatCallback {
 
             try {
 
-                int success = json.getInt(TAG_SUCCESS);
+                int success = json.getInt(Constants.SEARCH_TAG_SUCCESS);
 
                 if (success == 1) {
 
-                    idioms = json.getJSONArray(TAG_AVTAL);
+                    avtal = json.getJSONArray(Constants.SEARCH_TAG_AVTAL);
 
 
-                    for (int i = 0; i < idioms.length(); i++) {
-                        JSONObject c = idioms.getJSONObject(i);
+                    for (int i = 0; i < avtal.length(); i++) {
+                        JSONObject c = avtal.getJSONObject(i);
 
 
-                        String id = c.getString(TAG_ID);
-                        String company = c.getString(TAG_COMPANY);
-                        String address = c.getString(TAG_ADDRESS);
+                        String id = c.getString(Constants.SEARCH_TAG_ID);
+                        String company = c.getString(Constants.SEARCH_TAG_COMPANY);
+                        String address = c.getString(Constants.SEARCH_TAG_ADDRESS);
 
 
                         HashMap<String, String> map = new HashMap<String, String>();
 
 
-                        map.put(TAG_ID, id);
-                        map.put(TAG_COMPANY, company);
-                        map.put(TAG_ADDRESS, address);
+                        map.put(Constants.SEARCH_TAG_ID, id);
+                        map.put(Constants.SEARCH_TAG_COMPANY, company);
+                        map.put(Constants.SEARCH_TAG_ADDRESS, address);
 
                         avtalList.add(map);
                     }
                 } else {
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+/**
+ * Updating parsed JSON data into ListView
+ * */
 
+
+
+                            ListView lv = (ListView) findViewById(android.R.id.list);
+                            TextView emptyText = (TextView) findViewById(R.id.empty_listview);
+                            lv.setEmptyView(emptyText);
+
+
+
+                        }
+
+
+                    });
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -283,9 +296,9 @@ public class Search extends ListActivity implements  AppCompatCallback {
 
 
         protected void onPostExecute(String file_url) {
-// dismiss the dialog after getting the related idioms
+
             pDialog.dismiss();
-// updating UI from Background Thread
+
             runOnUiThread(new Runnable() {
                 public void run() {
 /**
@@ -293,8 +306,8 @@ public class Search extends ListActivity implements  AppCompatCallback {
  * */
 
                     ListAdapter adapter = new SimpleAdapter(
-                            Search.this, avtalList,
-                            R.layout.list_view, new String[]{TAG_ID, TAG_COMPANY, TAG_ADDRESS},
+                            SearchActivity.this, avtalList,
+                            R.layout.list_view, new String[]{Constants.SEARCH_TAG_ID, Constants.SEARCH_TAG_COMPANY, Constants.SEARCH_TAG_ADDRESS},
                             new int[]{R.id.id, R.id.company, R.id.address});
                     {
 
@@ -303,8 +316,6 @@ public class Search extends ListActivity implements  AppCompatCallback {
                     TextView emptyText = (TextView) findViewById(R.id.empty_listview);
                     lv.setEmptyView(emptyText);
 
-
-// updating listview
                     setListAdapter(adapter);
 
                 }

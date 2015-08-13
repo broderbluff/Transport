@@ -45,11 +45,12 @@
     <string name="renhallning">RENHÅLLNING</string>
     <string name="terminal">TERMINAL OCH LAGER</string>
     <string name="tidnings">TIDNINGSBUD OCH REKLAM</string>
-    <string name="actionbarBransch">Välj bransch</string>
+    <string name="actionbarBransch">Yrken &amp; branscher</string>
     <string name="actionbarSearch">Sök företag</string>
     <string name="searchHint">Sök efter kollektivavtal</string>
     <string name="actionbarInfo">Varför kollektivavtal</string>
     <string name="toast_no_internet">Ingen anslutning till internet</string>
     <string name="title_activity_maps">Map</string>
+    <string name="error_toast">Något gick fel, försök igen</string>
 
 </resources>

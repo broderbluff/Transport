@@ -14,79 +14,72 @@
         >
 
 
-
         <ImageButton
-            android:paddingTop="5dp"
+            android:id="@+id/ibBack"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:id="@+id/ibBack"
-            android:onClick="ibBack"
-            android:background="@drawable/arrow"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="12dp"
             android:layout_marginStart="12dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:background="@drawable/arrow"
+            android:onClick="ibBack"
+            android:paddingTop="5dp"/>
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:text="@string/actionbarBransch"
-            android:id="@+id/textView3"
-            android:gravity="center_vertical"
-            android:textColor="#fff"
-            android:textSize="20sp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="13dp"
             android:layout_marginStart="13dp"
-            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/ibBack"
             android:layout_toRightOf="@+id/ibBack"
-            android:layout_toEndOf="@+id/ibBack" />
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="@string/actionbarBransch"
+            android:textColor="#fff"
+            android:textSize="20sp"/>
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@id/header">
+        android:layout_below="@id/header"
+        android:background="@drawable/button_custom">
 
         <LinearLayout
-            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             >
+
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
+
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
+
                 android:gravity="center"
-
                 android:onClick="bemanningButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    android:id="@+id/imageView"
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
 
+                    android:id="@+id/tvBemanning"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="23sp"
+                    android:gravity="center|left"
+                    android:maxLines="1"
+                    android:paddingLeft="15dp"
                     android:text="@string/bemanning"
                     android:textColor="#fff"
+                    android:textSize="23sp"
                     android:textStyle="bold"
-                    android:maxLines="1"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvBemanning"
 
                     />
             </LinearLayout>
@@ -94,35 +87,26 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
+
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="bensinstationButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvBensinstation"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="23sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/bensinstation"
                     android:textColor="#fff"
+                    android:textSize="23sp"
                     android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvBensinstation"
 
                     />
             </LinearLayout>
@@ -130,282 +114,203 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
+
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="bevakningButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvBevakning"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="22sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/bevakning"
                     android:textColor="#fff"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvBevakning"
 
                     />
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="branslehanteringButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvBransle"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="22sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/bransle"
                     android:textColor="#fff"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvBransle"
 
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="dackbargningButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvDackbarning"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="22sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/dackbarning"
                     android:textColor="#fff"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvDackbarning"
 
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="flygbranschenButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvFlygbransch"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="23sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/flygbranschen"
                     android:textColor="#fff"
+                    android:textSize="23sp"
                     android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvFlygbransch"
 
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="godsButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvGodstransport"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="22sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/gods"
                     android:textColor="#fff"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvGodstransport"
 
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="hamnarbeteButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvHamnarbete"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="23sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/hamn"
                     android:textColor="#fff"
+                    android:textSize="23sp"
                     android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvHamnarbete"
 
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="persontransButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvPersontransport"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="22sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/persontransport"
                     android:textColor="#fff"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvPersontransport"
 
                     />
             </LinearLayout>
 
 
-
-
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="renhallningButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvRenhallning"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="23sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/renhallning"
                     android:textColor="#fff"
+                    android:textSize="23sp"
                     android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvRenhallning"
 
                     />
             </LinearLayout>
@@ -413,73 +318,52 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="terminalButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvTerminallager"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="22sp"
+                    android:layout_margin="3dp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/terminal"
                     android:textColor="#fff"
-                    android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
-                    android:id="@+id/tvTerminallager"
+                    android:textSize="22sp"
 
-                    android:layout_margin="3dp" />
+                    android:textStyle="bold"/>
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="15dp"
-
-                android:layout_marginBottom="10dp"
-                android:layout_height="55dp"
+                android:background="@drawable/button_custom"
                 android:gravity="center"
                 android:onClick="tidningButton"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_category_textview">
+                android:orientation="horizontal">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/bg_category"/>
 
                 <TextView
+                    android:id="@+id/tvTidning"
+                    style="@style/ShadowText"
                     android:layout_width="match_parent"
-
                     android:layout_height="match_parent"
-                    android:textSize="22sp"
+                    android:gravity="center|left"
+                    android:paddingLeft="15dp"
                     android:text="@string/tidnings"
                     android:textColor="#fff"
-                    android:textStyle="bold"
-                    android:gravity="center|right"
-                    android:paddingRight="15dp"
+                    android:textSize="22sp"
 
-                    android:id="@+id/tvTidning"
+                    android:textStyle="bold"
 
                     />
             </LinearLayout>

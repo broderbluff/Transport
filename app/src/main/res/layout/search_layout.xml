@@ -31,7 +31,7 @@
             android:layout_alignParentStart="true" />
 
         <EditText
-            android:id="@+id/txtkeyword"
+            android:id="@+id/searchEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:cursorVisible="true"
@@ -68,22 +68,26 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Du kan söka efter ort eller företags namn"
+        android:text="Du kan söka efter ort eller företagsnamn"
         android:id="@+id/tvIntro"
+
         android:textColor="@android:color/white"
-        android:textSize="17sp"/>
+        android:textSize="17sp"
+        android:layout_gravity="center_horizontal"/>
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/empty_listview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
         android:text="@string/empty_list"
-        style="@style/ShadowText"
+        android:layout_gravity="center_horizontal"
+        android:textSize="17sp"
         android:visibility="invisible"
         />
 
