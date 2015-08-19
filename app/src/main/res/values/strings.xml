@@ -33,18 +33,18 @@
 
 
 
-    <string name="bemanning">BEMANNINGSFÖRETAG</string>
-    <string name="bensinstation">BENSINSTATION</string>
-    <string name="bevakning">BEVAKNING OCH SÄKERHET</string>
-    <string name="bransle">BRÄNSLEHANTERING</string>
-    <string name="dackbarning">DÄCK, BÄRGNING, BILVÅRD</string>
-    <string name="flygbranschen">FLYGBRANSCHEN</string>
-    <string name="gods">GODSTRANSPORTER</string>
-    <string name="hamn">HAMNARBETE</string>
-    <string name="persontransport">PERSONTRANSPORTER</string>
-    <string name="renhallning">RENHÅLLNING</string>
-    <string name="terminal">TERMINAL OCH LAGER</string>
-    <string name="tidnings">TIDNINGSBUD OCH REKLAM</string>
+    <string name="bemanning">Bemanningsföretag</string>
+    <string name="bensinstation">Bensinstation</string>
+    <string name="bevakning">Bevakning och säkerhet</string>
+    <string name="bransle">Bränslehantering</string>
+    <string name="dackbarning">Däck, Bärning, Bilvård</string>
+    <string name="flygbranschen">Flygbranschen</string>
+    <string name="gods">Godstransporter</string>
+    <string name="hamn">Hamnarbete</string>
+    <string name="persontransport">Persontransporter</string>
+    <string name="renhallning">Renhållning</string>
+    <string name="terminal">Terminal och lager</string>
+    <string name="tidnings">Tidnings- och reklamdist.</string>
     <string name="actionbarBransch">Yrken &amp; branscher</string>
     <string name="actionbarSearch">Sök företag</string>
     <string name="searchHint">Sök efter kollektivavtal</string>

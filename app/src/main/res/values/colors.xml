@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="button_color_red">#e30613</color>
+    <color name="button_color_dark_red">#bf0612</color>
     <color name="button_color_blue">#164194</color>
 </resources>

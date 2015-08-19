@@ -22,7 +22,7 @@
             android:layout_height="30dp"
             android:id="@+id/ibBack"
             android:onClick="ibBack"
-            android:background="@drawable/arrow"
+            android:background="@drawable/backarrow"
             android:layout_marginLeft="12dp"
             android:layout_marginStart="12dp"
             android:layout_centerVertical="true"

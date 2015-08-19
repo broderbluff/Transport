@@ -3,7 +3,8 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#e1e1e1">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -23,7 +24,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="12dp"
             android:layout_marginStart="12dp"
-            android:background="@drawable/arrow"
+            android:background="@drawable/backarrow"
             android:onClick="ibBack"
             android:paddingTop="5dp"/>
 
@@ -47,7 +48,9 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/header"
-        android:background="@drawable/button_custom">
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,318 +58,653 @@
             android:orientation="vertical"
             >
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
-
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="bemanningButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/b1"/>
+
                 <TextView
 
                     android:id="@+id/tvBemanning"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_toRightOf="@+id/imageView"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
                     android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/bemanning"
-                    android:textColor="#fff"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
 
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="bensinstationButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/b2"/>
+
                 <TextView
+
                     android:id="@+id/tvBensinstation"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView2"
+                    android:layout_toRightOf="@+id/imageView2"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/bensinstation"
-                    android:textColor="#fff"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon2"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
+
+            </RelativeLayout>
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="bevakningButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/b3"/>
+
                 <TextView
+
                     android:id="@+id/tvBevakning"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView3"
+                    android:layout_toRightOf="@+id/imageView3"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/bevakning"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon3"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
 
+            </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="branslehanteringButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/b4"/>
+
                 <TextView
+
                     android:id="@+id/tvBransle"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView4"
+                    android:layout_toRightOf="@+id/imageView4"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/bransle"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon4"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
 
-            <LinearLayout
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="dackbargningButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/d"/>
+
                 <TextView
-                    android:id="@+id/tvDackbarning"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+
+                    android:id="@+id/tvDack"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView5"
+                    android:layout_toRightOf="@+id/imageView5"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/dackbarning"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon5"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
 
-            <LinearLayout
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="flygbranschenButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/f"/>
+
                 <TextView
-                    android:id="@+id/tvFlygbransch"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+
+                    android:id="@+id/tvFlyg"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView6"
+                    android:layout_toRightOf="@+id/imageView6"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/flygbranschen"
-                    android:textColor="#fff"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon6"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
 
-            <LinearLayout
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="godsButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/g"/>
+
                 <TextView
-                    android:id="@+id/tvGodstransport"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+
+                    android:id="@+id/tvGods"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView7"
+                    android:layout_toRightOf="@+id/imageView7"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/gods"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon7"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
 
-            <LinearLayout
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="hamnarbeteButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/h"/>
+
                 <TextView
-                    android:id="@+id/tvHamnarbete"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+
+                    android:id="@+id/tvHamn"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView8"
+                    android:layout_toRightOf="@+id/imageView8"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/hamn"
-                    android:textColor="#fff"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon8"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
 
-            <LinearLayout
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="persontransButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/p"/>
+
                 <TextView
-                    android:id="@+id/tvPersontransport"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+
+                    android:id="@+id/tvPerson"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView9"
+                    android:layout_toRightOf="@+id/imageView9"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/persontransport"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon9"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
+
+            </RelativeLayout>
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="renhallningButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/r"/>
+
                 <TextView
+
                     android:id="@+id/tvRenhallning"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView10"
+                    android:layout_toRightOf="@+id/imageView10"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/renhallning"
-                    android:textColor="#fff"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    />
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/icon10"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
+
+            </RelativeLayout>
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="terminalButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/t1"/>
+
                 <TextView
-                    android:id="@+id/tvTerminallager"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+
+                    android:id="@+id/tvTerminal"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_margin="3dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView11"
+                    android:layout_toRightOf="@+id/imageView11"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/terminal"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
-
+                    android:textColor="#808080"
+                    android:textSize="21sp"
                     android:textStyle="bold"/>
-            </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/icon11"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
+
+            </RelativeLayout>
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/button_custom"
+                android:background="@drawable/button_custom_darker"
                 android:gravity="center"
                 android:onClick="tidningButton"
                 android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/t2"/>
+
                 <TextView
+
                     android:id="@+id/tvTidning"
-                    style="@style/ShadowText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView12"
+                    android:layout_toRightOf="@+id/imageView12"
+                    android:background="@drawable/button_custom_darker"
                     android:gravity="center|left"
+                    android:maxLines="1"
                     android:paddingLeft="15dp"
+
                     android:text="@string/tidnings"
-                    android:textColor="#fff"
-                    android:textSize="22sp"
+                    android:textColor="#808080"
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                    android:textStyle="bold"
+                <ImageView
+                    android:id="@+id/icon12"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright"/>
 
-                    />
-            </LinearLayout>
+            </RelativeLayout>
+
+
+
+
         </LinearLayout>
     </ScrollView>
 

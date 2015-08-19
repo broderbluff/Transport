@@ -36,18 +36,18 @@
             android:name=".UI.InfoActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/noAnimTheme" />
+            />
         <activity
             android:name=".UI.SearchActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/noAnimTheme"
+
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".UI.CategoryActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/noAnimTheme" />
+           />
         <activity
             android:name=".UI.MapsActivity"
             android:label="@string/title_activity_maps"
@@ -56,6 +56,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".UI.SearchActivity" />
+        </activity>
+        <activity
+            android:name=".UI.AvdActivity"
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UI.MainActivity" />
         </activity>
     </application>
 

@@ -44,10 +44,9 @@ import se.transport.transport.Utils.JSONParser;
  * Created by Patrik on 2015-06-08.
  */
 
-public class SearchActivity extends ListActivity implements  AppCompatCallback {
+public class SearchActivity extends ListActivity implements AppCompatCallback {
     private EditText searchEditText;
 
-    
 
     private TextView tvIntro;
     private ProgressDialog pDialog;
@@ -61,9 +60,7 @@ public class SearchActivity extends ListActivity implements  AppCompatCallback {
     private static String url_search = "http://brimir.eu/search.php";
 
 
-
-
-   protected JSONArray avtal = null;
+    protected JSONArray avtal = null;
 
     public String companysearch;
     public String bransch;
@@ -75,7 +72,7 @@ public class SearchActivity extends ListActivity implements  AppCompatCallback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_layout);
         Intent myIntent = getIntent();
-        tvIntro = (TextView)findViewById(R.id.tvIntro);
+        tvIntro = (TextView) findViewById(R.id.tvIntro);
         bransch = myIntent.getStringExtra(Constants.KEY_BRANSCH);
 
 
@@ -109,7 +106,6 @@ public class SearchActivity extends ListActivity implements  AppCompatCallback {
         });
 
 
-
         searchEditText.setOnTouchListener(new View.OnTouchListener() {
 
             final int DRAWABLE_RIGHT = 2;
@@ -120,8 +116,8 @@ public class SearchActivity extends ListActivity implements  AppCompatCallback {
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     int leftEdgeOfRightDrawable = searchEditText.getRight()
                             - searchEditText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width();
-                    // when EditBox has padding, adjust leftEdge like
-                    // leftEdgeOfRightDrawable -= getResources().getDimension(R.dimen.edittext_padding_left_right);
+
+                    leftEdgeOfRightDrawable -= getResources().getDimension(R.dimen.image_padding);
                     if (event.getRawX() >= leftEdgeOfRightDrawable) {
                         tvIntro.setVisibility(View.GONE);
                         InputMethodManager inputManager = (InputMethodManager)
@@ -145,10 +141,6 @@ public class SearchActivity extends ListActivity implements  AppCompatCallback {
         });
 
 
-
-
-
-
         ListView lv = getListView();
 
 
@@ -168,17 +160,11 @@ public class SearchActivity extends ListActivity implements  AppCompatCallback {
                 intent.putExtra(Constants.SEARCH_TAG_COMPANY, companyName);
 
 
-
-
                 startActivity(intent);
 
 
             }
         });
-
-
-
-
 
 
     }
@@ -187,13 +173,6 @@ public class SearchActivity extends ListActivity implements  AppCompatCallback {
     public void ibBack(View view) {
         this.finish();
     }
-
-
-
-
-
-
-
 
 
     @Override
@@ -274,11 +253,9 @@ public class SearchActivity extends ListActivity implements  AppCompatCallback {
  * */
 
 
-
                             ListView lv = (ListView) findViewById(android.R.id.list);
                             TextView emptyText = (TextView) findViewById(R.id.empty_listview);
                             lv.setEmptyView(emptyText);
-
 
 
                         }

@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-
+                android:background="#e1e1e1"
     tools:context=".Search"
-    android:background="@mipmap/xxhdpibacksearch">
+   >
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             android:layout_height="30dp"
             android:id="@+id/ibBack"
             android:onClick="ibBack"
-            android:background="@drawable/arrow"
+            android:background="@drawable/backarrow"
             android:layout_marginLeft="12dp"
             android:layout_marginStart="12dp"
             android:layout_centerVertical="true"
@@ -54,15 +54,17 @@
     </RelativeLayout>
 
 <LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:layout_below="@id/header">
+    android:layout_below="@id/header"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_margin="8dp"
+    android:background="#ffffff">
 
 
     <TextView
@@ -71,20 +73,24 @@
         android:text="Du kan söka efter ort eller företagsnamn"
         android:id="@+id/tvIntro"
 
-        android:textColor="@android:color/white"
+        android:textColor="#808080"
         android:textSize="17sp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"/>
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_margin="8dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"/>
     <TextView
         android:id="@+id/empty_listview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
+        android:textColor="#808080"
         android:text="@string/empty_list"
         android:layout_gravity="center_horizontal"
         android:textSize="17sp"

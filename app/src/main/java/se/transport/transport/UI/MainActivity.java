@@ -28,8 +28,10 @@ public class MainActivity extends Activity {
         MainActivity.this.startActivity(myIntent);
     }
     public void logoClick(View view) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.WEB_URL));
-        MainActivity.this.startActivity(browserIntent);
+
+        Intent myIntent = new Intent(MainActivity.this, AvdActivity.class);
+        MainActivity.this.startActivity(myIntent);
+
     }
 
 }
