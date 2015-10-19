@@ -267,10 +267,14 @@ public void onMarkerClickDialog(Marker marker){
         finish();
     }
 
-    public void OnClickTransport(View view){
+    public void goToTransport(View view){
           Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.WEB_URL));
 
         AvdActivity.this.startActivity(browserIntent);
+        finish();
+    }
+
+    public void ibBack(View view){
         finish();
     }
 }

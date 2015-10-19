@@ -5,6 +5,55 @@
     android:layout_height="match_parent"
     tools:context="com.rogcg.androidgmaps.MainActivity"
     tools:ignore="MergeRootFrame" >
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:background="#212121"
+        >
+
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/backarrow"
+            android:onClick="ibBack"
+            android:paddingTop="5dp"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/ibBack"
+            android:layout_toRightOf="@+id/ibBack"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="Våra Avdelningar"
+            android:textColor="#fff"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/wwwImageView"
+            android:src="@drawable/wwwicon"
+            android:scaleType="fitCenter"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="8dp"
+            android:onClick="goToTransport"/>
+    </RelativeLayout>
 
     <fragment
         android:id="@+id/map"
@@ -18,43 +67,11 @@
         map:uiCompass="true"
         map:uiZoomControls="true"
         map:cameraZoom="4.5"
-        android:layout_above="@+id/footer"
+        android:layout_below="@+id/header"
 
         />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:id="@+id/footer"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_height="wrap_content">
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:text="Stäng"
-            android:layout_weight="50"
-            android:textStyle="bold"
-            android:id="@+id/buttonClose"
-
-            android:background="@drawable/button_custom"
-            android:textColor="@android:color/white"
-            android:onClick="OnClickClose"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:text="Transport.se"
-            android:textStyle="bold"
-            android:id="@+id/buttonTransport"
-            android:layout_weight="50"
-            android:background="@drawable/button_custom"
-            android:textColor="@android:color/white"
-            android:onClick="OnClickTransport"/>
-    </LinearLayout>
 
 </RelativeLayout>
 
