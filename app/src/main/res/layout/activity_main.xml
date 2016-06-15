@@ -16,38 +16,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sök företag"
-        android:id="@+id/textView"
-        android:textColor="#fff"
 
-        android:textSize="17sp"
-        style="@style/ShadowText"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignLeft="@+id/searchButton"
-        android:layout_alignStart="@+id/searchButton"
-        android:layout_alignRight="@+id/searchButton"
-        android:layout_alignEnd="@+id/searchButton"
-        android:gravity="center"/>
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/searchButton"
-        android:onClick="searchClick"
-        android:scaleType="fitCenter"
-        android:src="@drawable/xxhdpisearchicon"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="45dp"
-        android:background="@drawable/main_activity_button_shadow"/>
-
-    <ImageView
+        <ImageView
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:id="@+id/imageLogo"
@@ -58,58 +28,140 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/imageInfo"
-        android:onClick="infoClick"
-        android:src="@drawable/xxhdpiinfo"
-        android:scaleType="fitCenter"
-        android:layout_alignTop="@+id/searchButton"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginLeft="29dp"
-        android:layout_marginStart="29dp"
-        android:background="@drawable/main_activity_button_shadow"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/linearLayout"
+            android:layout_marginTop="31dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/linearLayout2"
+            android:layout_alignStart="@+id/linearLayout2">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="Varför kollektivavtal?"
-        android:id="@+id/textView2"
-        android:textColor="#fff"
-        style="@style/ShadowText"
-        android:layout_below="@+id/imageInfo"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="12dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/newsButton"
+                android:onClick="newsClick"
+                android:scaleType="center"
+                android:src="@drawable/newspaper"
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/imageView14"
-        android:src="@drawable/xxhdpilocationicon"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/imageInfo"
-        android:layout_alignStart="@+id/imageInfo"
-        android:onClick="avdClick"
-        android:background="@drawable/main_activity_button_shadow"/>
+                android:layout_alignParentTop="true"
+                android:layout_alignRight="@+id/searchButton"
+                android:layout_alignEnd="@+id/searchButton"
+                android:layout_alignLeft="@+id/searchButton"
+                android:layout_alignStart="@+id/searchButton" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Våra avdelningar"
-        android:id="@+id/textView5"
-        android:textColor="#fff"
-        style="@style/ShadowText"
-        android:textSize="17sp"
-        android:layout_below="@+id/imageView14"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2"
-        android:gravity="center"/>
-</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nyheter"
+                android:id="@+id/tvStartNyheter"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:layout_below="@+id/newsButton"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/linearLayout3"
+            android:layout_alignTop="@+id/linearLayout"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="31dp"
+            android:layout_marginEnd="31dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageInfo"
+                android:onClick="infoClick"
+                android:src="@drawable/information"
+                android:scaleType="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vad är kollektivavtal?"
+                android:id="@+id/tvStartInfo"
+                android:textColor="#fff"
+                android:textSize="18sp"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="43dp"
+            android:id="@+id/linearLayout2"
+            android:layout_below="@+id/linearLayout"
+            android:layout_toLeftOf="@+id/linearLayout3"
+            android:layout_toStartOf="@+id/linearLayout3">
+
+            <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mapButton"
+            android:src="@drawable/mapmarker"
+            android:onClick="avdClick"
+            android:scaleType="center"
+                 />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Våra avdelningar"
+                android:id="@+id/tvStartAvd"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:layout_below="@+id/mapButton"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignTop="@+id/linearLayout2"
+            android:layout_alignLeft="@+id/linearLayout3"
+            android:layout_alignStart="@+id/linearLayout3"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="36dp"
+            android:id="@+id/linearLayout4">
+
+            <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchButton"
+            android:onClick="searchClick"
+            android:scaleType="center"
+            android:src="@drawable/magnify"
+             />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sök företag"
+                android:id="@+id/tvStartSearch"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:layout_below="@+id/searchButton"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>

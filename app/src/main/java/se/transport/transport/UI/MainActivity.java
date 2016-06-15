@@ -8,6 +8,7 @@ import android.view.View;
 
 import se.transport.transport.R;
 import se.transport.transport.Utils.Constants;
+import se.transport.transport.rssreader.RssActivity;
 
 
 public class MainActivity extends Activity {
@@ -27,11 +28,15 @@ public class MainActivity extends Activity {
         Intent myIntent = new Intent(MainActivity.this, CategoryActivity.class);
         MainActivity.this.startActivity(myIntent);
     }
+    public void newsClick(View view) {
+        Intent myIntent = new Intent(MainActivity.this, RssActivity.class);
+        MainActivity.this.startActivity(myIntent);
+    }
     public void logoClick(View view) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.WEB_URL));
 
-       MainActivity.this.startActivity(browserIntent);
-     
+        MainActivity.this.startActivity(browserIntent);
+
 
     }
     public void avdClick(View view) {
