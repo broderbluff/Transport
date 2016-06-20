@@ -53,6 +53,7 @@ public class RefreshableListView extends ListView implements OnScrollListener {
 		super(context);
 		// TODO Auto-generated constructor stub
 		init(context);
+
 	}
 
 	public RefreshableListView(Context context, AttributeSet attrs) {
@@ -155,7 +156,7 @@ public class RefreshableListView extends ListView implements OnScrollListener {
 				.findViewById(R.id.head_progressBar);
 		headerTextView = (TextView) headerRelativeLayout
 				.findViewById(R.id.head_tipsTextView);
-		headerTextView.setText(R.string.pull_to_refresh);
+		headerTextView.setText("Laddar, vänta....");
 		lastUpdateDateTextView = (TextView) headerRelativeLayout
 				.findViewById(R.id.head_lastUpdatedDateTextView);
 		lastUpdateDateTextView.setText("");
@@ -186,6 +187,7 @@ public class RefreshableListView extends ListView implements OnScrollListener {
 		reverseRotateAnimation.setInterpolator(new LinearInterpolator());
 		reverseRotateAnimation.setDuration(1);
 		reverseRotateAnimation.setFillAfter(true);
+
 	}
 	
 	private OnClickListener loadMoreClickListener = new OnClickListener() {
@@ -212,7 +214,7 @@ public class RefreshableListView extends ListView implements OnScrollListener {
 		SimpleDateFormat format =new SimpleDateFormat("dd MMM, HH:mm");
 		String date=format.format(new Date());
 		lastUpdateDateTextView.setText(getContext().getString(R.string.last_updated) + date);
-				
+		headerTextView.setText(R.string.pull_to_refresh);
 		isLoading = false;
 		//isDragging = false;
 	}

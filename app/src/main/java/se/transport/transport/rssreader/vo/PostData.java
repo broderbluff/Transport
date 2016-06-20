@@ -13,4 +13,5 @@ public class PostData {
 	public String postLink;
 	public String postContent;
 	public String postGuid;
+	public String postDescription;
 }

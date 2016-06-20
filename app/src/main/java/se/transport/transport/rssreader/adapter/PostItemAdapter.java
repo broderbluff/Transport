@@ -40,6 +40,7 @@ public class PostItemAdapter extends ArrayAdapter<PostData> {
 		TextView postDateView;
 		ImageView postThumbView;
 		TextView postFirstLetter;
+		TextView postDescriptionView;
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -57,6 +58,10 @@ public class PostItemAdapter extends ArrayAdapter<PostData> {
 					.findViewById(R.id.postDateLabel);
 			viewHolder.postFirstLetter = (TextView) convertView
 					.findViewById(R.id.postFirstLetter);
+			viewHolder.postDescriptionView = (TextView) convertView
+					.findViewById(R.id.postDescription);
+
+
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -67,13 +72,19 @@ public class PostItemAdapter extends ArrayAdapter<PostData> {
 					.setImageResource(R.drawable.postthumb_loading);
 		}*/
 
-		viewHolder.postTitleView.setText(datas.get(position).postTitle);
+		viewHolder.postTitleView.setText(datas.get(position).postTitle.replaceAll("<.*?>", ""));
 
 		String getFirstLetter = datas.get(position).postTitle;
 		String firstLetterIs = getFirstLetter.substring(0,1);
-		viewHolder.postFirstLetter.setText(firstLetterIs);
+		if (firstLetterIs.matches("[^a-öA-Ö0-9]")){
+			firstLetterIs = getFirstLetter.substring(1,2);
+		}
 
-		int rndN = rnd.nextInt(4) ;
+		viewHolder.postFirstLetter.setText(firstLetterIs);
+		viewHolder.postDescriptionView.setText(datas.get(position).postDescription.replaceAll("<.*?>", "").replace("&nbsp;",""));
+
+		int rndN = rnd.nextInt(12) ;
+
 		String imgName = "circle_" + rndN;
 		Resources res = getContext().getResources();
 		int id = res.getIdentifier(imgName, "drawable", getContext().getPackageName());

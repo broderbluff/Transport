@@ -47,15 +47,16 @@
 
             <ImageView
                 android:id="@+id/head_arrowImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="33dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/head_arrowImage"
                 android:src="@drawable/ic_arrow_refresh" />
 
             <ProgressBar
+
                 android:id="@+id/head_progressBar"
-                style="?android:attr/progressBarStyleSmall"
+                style="@android:style/Widget.Holo.ProgressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -36,7 +36,7 @@ import java.util.Locale;
 
 public class RssActivity extends Activity implements RefreshableInterface {
 	private enum RSSXMLTag {
-		TITLE, DATE, LINK, CONTENT, GUID, IGNORETAG;
+		TITLE, DATE, LINK, CONTENT, GUID, IGNORETAG, DESCRIPTION;
 	}
 
 	private ArrayList<PostData> listData;
@@ -135,7 +135,7 @@ public class RssActivity extends Activity implements RefreshableInterface {
 				PostData pdData = null;
 				DateFormat dateFormat = new SimpleDateFormat(
 						"EEE, dd MMM yyyy HH:mm:ss zzz", Locale.ENGLISH);
-				DateFormat targetFormat = new SimpleDateFormat("EEE d MMMM");
+				DateFormat targetFormat = new SimpleDateFormat("EEE d MMMM, HH:mm");
 				while (eventType != XmlPullParser.END_DOCUMENT) {
 					if (eventType == XmlPullParser.START_DOCUMENT) {
 
@@ -145,6 +145,8 @@ public class RssActivity extends Activity implements RefreshableInterface {
 							currentTag = RSSXMLTag.IGNORETAG;
 						} else if (xpp.getName().equals("title")) {
 							currentTag = RSSXMLTag.TITLE;
+						}else if (xpp.getName().equals("description")) {
+							currentTag = RSSXMLTag.DESCRIPTION;
 						} else if (xpp.getName().equals("link")) {
 							currentTag = RSSXMLTag.LINK;
 						} else if (xpp.getName().equals("pubDate")) {
@@ -185,6 +187,15 @@ public class RssActivity extends Activity implements RefreshableInterface {
 									}
 								}
 								break;
+								case DESCRIPTION:
+									if (content.length() != 0) {
+										if (pdData.postDescription != null) {
+											pdData.postDescription += content;
+										} else {
+											pdData.postDescription = content;
+										}
+									}
+									break;
 							case LINK:
 								if (content.length() != 0) {
 									if (pdData.postLink != null) {
